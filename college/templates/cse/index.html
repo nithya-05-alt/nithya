@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "stylesheet/style.css" %}">
+</head>
+<body>
+<img src="{% static "image/blue.jpg" %}">
+<h1> NITHYA </h1>
+<p>thinkchamp {{name}} {{role}}</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Study</th>
+        <th>Phone</th>
+        </tr>
+        {% for j in result %}
+            <tr>
+        <td>{{j.name}}</td>
+        <td>{{j.study}}</td>
+        <td>{{j.phone}}</td>
+        <td><a href="/upda/{{j.id}}">update</td>
+        <td><a href="/dele/{{j.id}}">delete</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
